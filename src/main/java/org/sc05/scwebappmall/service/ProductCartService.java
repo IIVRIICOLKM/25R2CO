@@ -45,3 +45,5 @@ public class ProductCartService {
         return cart.stream().mapToInt(ProductCartItem::getTotalPrice).sum();
     }
 }
+
+/* 상품 저장소 비즈니스 로직 */

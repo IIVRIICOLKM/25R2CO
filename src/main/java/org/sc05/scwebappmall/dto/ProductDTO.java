@@ -17,3 +17,5 @@ public class ProductDTO {
         return new Product(name, content, price, stock);
     }
 }
+
+/* 상품 DTO */

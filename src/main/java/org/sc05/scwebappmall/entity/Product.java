@@ -42,3 +42,4 @@ public class Product {
         this.stock = stock;
     }
 }
+/* Product 엔티티 */

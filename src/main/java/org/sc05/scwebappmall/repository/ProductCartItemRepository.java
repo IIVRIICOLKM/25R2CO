@@ -6,3 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductCartItemRepository extends JpaRepository<ProductCartItem, Long> {}
+/* 장바구니 리포지토리 */

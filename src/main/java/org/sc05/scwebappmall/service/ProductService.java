@@ -39,3 +39,5 @@ public class ProductService {
         return contentProductRepository.save(product);
     }
 }
+
+/* 상품 기능 비즈니스 로직 */

@@ -40,3 +40,5 @@ class ProductCartItemDTO{
         this.totalPrice = productCartItem.getTotalPrice();
     }
 }
+
+/* 상품 장바구니 DTO */

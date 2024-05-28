@@ -35,3 +35,4 @@ public class ProductCartItem {
     }
 }
 //재고보다 장바구니의 숫자가 많으면 결제가 안되는 기능 추가 예정.
+/* Product 장바구니 엔티티 */

@@ -11,4 +11,5 @@ public interface ProductRepository extends JpaRepository<Product, Long>
 {
     List<Product> findByName(String name);
 }
+/* 상품 리포지토리 */
 
