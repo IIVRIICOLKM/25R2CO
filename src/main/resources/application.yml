@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    #전송 쿼리 확인
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MariaDBDialect
+        ddl-auto: update
+    #테이블 생성 후에 data.sql 실행
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:mariadb://localhost:3306/kmleedb
+    username: Kmlee
+    password: ks110k1@
+    driver-class-name: org.mariadb.jdbc.Driver
