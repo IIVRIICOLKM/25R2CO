@@ -11,5 +11,3 @@ public class BlogApplication {
         SpringApplication.run(BlogApplication.class, args);
     }
 }
-
-//주 브렌치를 마스터 브렌치로 통합//
