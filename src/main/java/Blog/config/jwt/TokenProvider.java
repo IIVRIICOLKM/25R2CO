@@ -26,6 +26,7 @@ public class TokenProvider {
         return makeToken(new Date(now.getTime() + expiredAt.toMillis()), user);
     }
 
+    //JWT 토큰 생성 메서드
     private String makeToken(Date expiry, User user){
         Date now = new Date();
 
@@ -38,19 +39,19 @@ public class TokenProvider {
                 .signWith(SignatureAlgorithm.HS256, jwtProperties.getSecretKey())
                 .compact();
     }
-
+    //JWT 토큰 유효성 검증 메서드
     public Boolean validToken(String token){
         try{
             Jwts.parser()
-                    .setSigningKey(jwtProperties.getSecretKey())
+                    .setSigningKey(jwtProperties.getSecretKey())         //비밀값으로 복호화
                     .parseClaimsJws(token);
             return true;
         }
-        catch(Exception e){
+        catch(Exception e){     ///복호화 과정에서 에러 발생 시, 유효하지 않은 토큰
             return false;
         }
     }
-
+    //토큰 기반으로 인증 정보를 가져오는 메서드
     public Authentication getAuthentication(String token){
         Claims claims = getClaims(token);
         Set<SimpleGrantedAuthority> authorities = Collections.singleton
@@ -59,14 +60,15 @@ public class TokenProvider {
         return new UsernamePasswordAuthenticationToken(new org.springframework.security.core.userdetails
                 .User(claims.getSubject(), "", authorities), token, authorities);
     }
-
+    //토큰 기반으로 유저 ID 수령 메서드
     public Long getUserId(String token){
         Claims claims = getClaims(token);
         return claims.get("id", Long.class);
     }
 
     private Claims getClaims(String token){
-        return Jwts.parser().setSigningKey(jwtProperties.getSecretKey())
+        return Jwts.parser()  //클레임 조회
+                .setSigningKey(jwtProperties.getSecretKey())
                 .parseClaimsJws(token)
                 .getBody();
     }
