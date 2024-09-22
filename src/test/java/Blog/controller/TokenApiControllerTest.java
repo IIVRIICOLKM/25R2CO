@@ -75,6 +75,6 @@ class TokenApiControllerTest {
         //then
         resultActions
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.accessTokeb").isNotEmpty());
+                .andExpect(jsonPath("$.accessToken").isNotEmpty());
     }
 }
