@@ -34,8 +34,12 @@ public class Article {
     private LocalDateTime updatedAt;
     //엔티티 생성 시, 관련 시간대 저장
 
+    @Column(name = "author", nullable = false)
+    private String author;
+
     @Builder
-    public Article(String title, String content){
+    public Article(String author, String title, String content){
+        this.author = author;
         this.title = title;
         this.content = content;
     }

@@ -13,10 +13,11 @@ public class AddArticleRequest {
     private String content;
 
     //빌더 타입을 활용해 DTO를 엔티티로 제작
-    public Article toEntity(){
+    public Article toEntity(String author){
         return Article.builder()
                 .title(title)
                 .content(content)
+                .author(author)
                 .build();
     }
 }
